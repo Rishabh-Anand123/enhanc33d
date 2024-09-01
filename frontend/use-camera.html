@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Feed</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Camera Capture Feed</h1>
+        </header>
+        <main>
+            <section id="camera-section">
+                <div class="video-container">
+                    <video id="camera-stream" autoplay playsinline></video>
+                </div>
+                <div id="bottom-bar">
+                    <button id="home-button" onclick="window.location.href='index.html'">Home</button>
+                    <div id="camera-select-container">
+                        <label for="camera-select">Select Camera:</label>
+                        <select id="camera-select">
+                            <!-- Options will be added dynamically -->
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <form id="capture-form" action="http://localhost:8501/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="image_data" id="image_data">
+                <button type="submit">Capture Image</button>
+            </form>
+        </main>
+    </div>
+    <script src="camera-script.js"></script>
+</body>
+</html>
